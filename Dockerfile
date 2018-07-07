@@ -8,9 +8,9 @@ RUN apk update && apk upgrade && apk add --no-cache mc openssh \
 	&& echo "root:${ROOT_PASSWORD}" | chpasswd \
 	&& rm -rf /var/cache/apk/* /tmp/*
 
-COPY entrypoint.sh /usr/local/bin/
+COPY entrypoint.sh /
 
-EXPOSE 2200
+EXPOSE 22
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
