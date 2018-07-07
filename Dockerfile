@@ -9,6 +9,7 @@ RUN apk update && apk upgrade && apk add --no-cache mc openssh \
 	&& rm -rf /var/cache/apk/* /tmp/*
 
 COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
 EXPOSE 22
 
