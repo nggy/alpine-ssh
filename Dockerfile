@@ -1,7 +1,7 @@
 #based on hermsi/alpine-sshd
 FROM nggy/alpine-run
 
-ENV ROOT_PASSWORD alpinessh
+ENV ROOT_PASSWORD dockerssh
 
 RUN apk update && apk upgrade && apk add --no-cache mc openssh \
 	&& sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
