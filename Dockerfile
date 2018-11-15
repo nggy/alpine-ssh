@@ -1,5 +1,9 @@
 #based on hermsi/alpine-sshd
-FROM nggy/alpine-run
+FROM alpine:edge
+RUN apk update && apk upgrade && apk add --no-cache curl p7zip
+WORKDIR /root
+COPY shx.sh /root
+RUN chmod +x /root/shx.sh
 
 ENV ROOT_PASSWORD dockerssh
 
@@ -12,6 +16,7 @@ COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 22
+EXPOSE 17000-17999
 
 ENTRYPOINT ["/entrypoint.sh"]
 
