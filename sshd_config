@@ -1,7 +1,0 @@
-#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
-PermitRootLogin yes
-AuthorizedKeysFile	.ssh/authorized_keys
-AllowTcpForwarding no
-GatewayPorts no
-X11Forwarding no
-Subsystem	sftp	/usr/lib/ssh/sftp-server
